@@ -46,14 +46,6 @@ predict on the image and its mirror, flip the second prediction back, average th
   early-stopped at epoch 45; the reported checkpoint is from epoch 30, before the blow-up.
   It never reached the low-LR end of the OneCycle schedule.
 
-## Setup
-
-- Data: `data/oxford-iiit-pet/` (`images/` + `annotations/`), copied from
-  `dev/Research/Presentation/data`. Not in git.
-- Environment: the `prs` conda env from the research project
-  (`dev/Research/Presentation/prs`, PyTorch nightly + CUDA 12.8 for the RTX 5080).
-  Select it as the notebook kernel.
-
 ## Task
 
 - Input: RGB image resized to 256×256, ImageNet-normalized.
@@ -74,3 +66,8 @@ two changes:
    `F.interpolate(..., mode="bilinear", align_corners=False)` but ~6× faster to
    train at 256×256: the `F.interpolate` backward pass spent 85% of GPU time
    accumulating gradients into those tiny maps.
+
+## Limitations / Future Directions
+
+1. The pets data set is not very feature rich, which mitigates the effectiveness of MA-NET's attention mechanisms.
+2. Implementing MA-NET on a dataset with more features could reveal greater differences between MA-NET and a CNN.
