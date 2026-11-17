@@ -54,20 +54,9 @@ predict on the image and its mirror, flip the second prediction back, average th
   official `test` split for evaluation (1,183 cats, 2,486 dogs).
 - Loss: BCE + soft Dice. AdamW + OneCycle LR, bf16 autocast, early stopping on val Dice.
 
-## Model notes
-
-Same MANet blocks as `dev/manet/centered64_lib.py` (GroupNorm DoubleConvs,
-PAB self-attention at the bottleneck, MFAB multi-scale attention on skips), with
-two changes:
-
-1. `n_classes` is passed through to the output layer in every variant.
-2. MFAB's bilinear upsampling of the pooled 1×1…6×6 maps is written as two
-   matmuls (`bilinear_upsample`). It is numerically identical to
-   `F.interpolate(..., mode="bilinear", align_corners=False)` but ~6× faster to
-   train at 256×256: the `F.interpolate` backward pass spent 85% of GPU time
-   accumulating gradients into those tiny maps.
 
 ## Limitations / Future Directions
 
 1. The pets data set is not very feature rich, which mitigates the effectiveness of MA-NET's attention mechanisms.
 2. Implementing MA-NET on a dataset with more features could reveal greater differences between MA-NET and a CNN.
+3. The dataset was also relatively small for a model as complex as MA-NET; a larger dataset could allow the model to learn through more epochs.
