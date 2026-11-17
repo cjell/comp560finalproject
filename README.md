@@ -2,9 +2,9 @@
 
 To download the dataset used, go to: https://www.robots.ox.ac.uk/~vgg/data/pets/ (the dataset was too large to keep in github).
 
-Trains the MANet segmentation model from my wildfire-spread research on the
+In this project we compare how MA-NET performs on masking pets compared to a CNN using the
 Oxford-IIIT Pet dataset (all 37 breeds, cats + dogs) to predict a pixel mask of
-the animal, then evaluates and visualizes it on cats.
+the pet.
 
 ## Files
 
@@ -16,11 +16,11 @@ the animal, then evaluates and visualizes it on cats.
 | `02b_train_basic_cnn.ipynb` | Trains the basic CNN baseline with identical settings |
 | `03_predict_cats.ipynb` | Compares all runs on the test set (with/without flip TTA), CNN vs MANet per cat and per breed, best/worst/random cats for each model, threshold sweep, your own photos |
 | `archive/02_train_manet_40ep_run.ipynb` | The first MANet run (40 epochs), kept for comparison |
-| `my_cats/` | Drop your own cat photos here, then re-run the last cell of notebook 03 |
+| `my_cats/` | Pictures of my own cat I uploaded to test the model (didn't push to git) |
 | `outputs/` | Saved figures, training histories, test predictions, cat cutouts |
-| `checkpoints/` | `basiccnn_e80`, `manet_e40`, `manet_e80` best checkpoints (not in git) |
 
-## Experiments
+
+## Methods
 
 All runs use the same train/val/test images, augmentation, loss, optimizer and schedule.
 
