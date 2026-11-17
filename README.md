@@ -1,5 +1,7 @@
 # COMP560 Final Project — MANet pet segmentation, evaluated on cats
 
+To download the dataset used, go to: https://www.robots.ox.ac.uk/~vgg/data/pets/ (the dataset was too large to keep in github).
+
 Trains the MANet segmentation model from my wildfire-spread research on the
 Oxford-IIIT Pet dataset (all 37 breeds, cats + dogs) to predict a pixel mask of
 the animal, then evaluates and visualizes it on cats.
