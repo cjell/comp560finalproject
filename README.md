@@ -15,6 +15,7 @@ the pet.
 | `02_train_manet.ipynb` | Trains full MANet on all pets for 80 epochs |
 | `02b_train_basic_cnn.ipynb` | Trains the basic CNN baseline with identical settings |
 | `03_predict_cats.ipynb` | Compares all runs on the test set (with/without flip TTA), CNN vs MANet per cat and per breed, best/worst/random cats for each model, threshold sweep, your own photos |
+| `04_my_cats_compare.ipynb` | Loads the best basic-CNN and MANet checkpoints and shows them side by side on your own photos (original, CNN, MANet, where they disagree). Set `IMAGE_PATH` for one photo, or leave it `None` to run everything in `my_cats/` |
 | `archive/02_train_manet_40ep_run.ipynb` | The first MANet run (40 epochs), kept for comparison |
 | `my_cats/` | Pictures of my own cat I uploaded to test the model (didn't push to git) |
 | `outputs/` | Saved figures, training histories, test predictions, cat cutouts |
