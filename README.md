@@ -20,9 +20,9 @@ so the results can be viewed directly on GitHub without running anything.
 2. Open `04_my_cats_compare.ipynb` and run all cells. It compares the basic CNN and MANet on the photos in
    `my_cats/` (add your own there). Runs on CPU in under a minute; a GPU is used if available.
 
-**Checkpoints:** the basic CNN checkpoint is in `checkpoints/`. The MANet checkpoints (134 MB each, too big for git)
-are on the [v1.0 release](https://github.com/cjell/comp560finalproject/releases/tag/v1.0); notebooks 03 and 04
-download them into `checkpoints/` automatically the first time they run.
+**Checkpoints:** the basic CNN checkpoint is in `checkpoints/`. The MANet checkpoint (`manet_e80_lr3e-4_pets_best.pt`, 134 MB, too big for git)
+is on the [v1.0 release](https://github.com/cjell/comp560finalproject/releases/tag/v1.0); notebooks 03 and 04
+download it into `checkpoints/` automatically the first time they run.
 
 **Re-running the full evaluation (`03_predict_cats.ipynb`) or training (`02*`)** also needs the dataset:
 download `images.tar.gz` and `annotations.tar.gz` from https://www.robots.ox.ac.uk/~vgg/data/pets/ and
