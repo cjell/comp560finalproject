@@ -18,7 +18,7 @@ the pet.
 | `04_my_cats_compare.ipynb` | Loads the best basic-CNN and MANet checkpoints and shows them side by side on any photos you upload to `my_cats/`. You can set `IMAGE_PATH` for one photo, or leave it `None` to run everything in `my_cats/` |
 | `archive/02_train_manet_40ep_run.ipynb` | The first MANet run (40 epochs), kept for comparison |
 | `archive/02_train_manet_80ep_lr1e-3_run.ipynb` | An earlier 80-epoch MANet run at peak LR 1e-3 that diverged at epoch 36, replaced by the LR 3e-4 run |
-| `my_cats/` | Pictures of my own cat I uploaded to test the model (didn't push to git) |
+| `my_cats/` | Pictures of my own cat I uploaded to test the model |
 | `outputs/` | Saved figures, training histories, test predictions |
 
 
