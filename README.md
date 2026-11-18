@@ -1,4 +1,4 @@
-# COMP560 Final Project — MANet pet segmentation, evaluated on cats
+# COMP560 Final Project — MANet pet segmentation
 
 To download the dataset used, go to: https://www.robots.ox.ac.uk/~vgg/data/pets/ (the dataset was too large to keep in github).
 
