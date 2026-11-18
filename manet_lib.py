@@ -529,3 +529,28 @@ def predict_image(model, img: Image.Image, img_size=256, device="cuda", tta=Fals
     prob = predict_probs(model, x, tta=tta)
     prob = F.interpolate(prob, size=(img.height, img.width), mode="bilinear", align_corners=False)
     return prob[0, 0].cpu().numpy()
+
+
+# ---------------------------------------------------------------------------
+# Checkpoints
+# ---------------------------------------------------------------------------
+# The MANet checkpoints (134 MB each) are too big for git, so they live on the GitHub Release.
+RELEASE_URL = "https://github.com/cjell/comp560finalproject/releases/download/v1.0"
+
+
+def ensure_checkpoint(path) -> Path:
+    """Return `path`, downloading the file from the GitHub Release first if it isn't on disk."""
+    path = Path(path)
+    if path.exists():
+        return path
+    url = f"{RELEASE_URL}/{path.name}"
+    print(f"{path} not found locally, downloading {url}")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        torch.hub.download_url_to_file(url, str(path))
+    except Exception as e:
+        raise FileNotFoundError(
+            f"Could not download {path.name}. Get it from "
+            f"{RELEASE_URL.rsplit('/download', 1)[0]} and put it in {path.parent}/"
+        ) from e
+    return path

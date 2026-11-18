@@ -6,6 +6,29 @@ In this project we compare how MA-NET performs on masking pets compared to a CNN
 Oxford-IIIT Pet dataset (all 37 breeds, cats + dogs) to predict a pixel mask of
 the pet.
 
+## Quick start
+
+No training or dataset needed to try the models. Every notebook is also saved with its outputs,
+so the results can be viewed directly on GitHub without running anything.
+
+1. Clone the repo and install the requirements (Python 3.10+):
+   ```bash
+   git clone https://github.com/cjell/comp560finalproject.git
+   cd comp560finalproject
+   pip install -r requirements.txt
+   ```
+2. Open `04_my_cats_compare.ipynb` and run all cells. It compares the basic CNN and MANet on the photos in
+   `my_cats/` (add your own there). Runs on CPU in under a minute; a GPU is used if available.
+
+**Checkpoints:** the basic CNN checkpoint is in `checkpoints/`. The MANet checkpoints (134 MB each, too big for git)
+are on the [v1.0 release](https://github.com/cjell/comp560finalproject/releases/tag/v1.0); notebooks 03 and 04
+download them into `checkpoints/` automatically the first time they run.
+
+**Re-running the full evaluation (`03_predict_cats.ipynb`) or training (`02*`)** also needs the dataset:
+download `images.tar.gz` and `annotations.tar.gz` from https://www.robots.ox.ac.uk/~vgg/data/pets/ and
+extract both into `data/oxford-iiit-pet/` (so you have `data/oxford-iiit-pet/images/` and
+`data/oxford-iiit-pet/annotations/`).
+
 ## Files
 
 | File | What it does |

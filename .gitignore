@@ -1,5 +1,6 @@
 data/
-checkpoints/
+checkpoints/*
+!checkpoints/basiccnn_e80_pets_best.pt
 __pycache__/
 .ipynb_checkpoints/
 outputs/cutout_*.png

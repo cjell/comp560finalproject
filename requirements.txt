@@ -1,0 +1,9 @@
+# Install PyTorch first if you want a GPU build: https://pytorch.org/get-started/locally/
+# (a plain `pip install torch torchvision` gives a build that works on CPU, and on most NVIDIA GPUs)
+torch>=2.1
+torchvision>=0.16
+numpy
+pandas
+matplotlib
+pillow
+jupyter
